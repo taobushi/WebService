@@ -1,0 +1,213 @@
+2019-06-26 01:38:35,554 INFO [main] org.apache.cxf.endpoint.ServerImpl.initDestination(85) | Setting the server's publish address to be http://localhost:8011/ws/
+2019-06-26 01:38:35,652 INFO [main] org.eclipse.jetty.server.Server.doStart(272) | jetty-8.1.15.v20140411
+2019-06-26 01:38:36,742 INFO [main] org.eclipse.jetty.server.AbstractConnector.doStart(338) | Started SelectChannelConnector@localhost:8011
+2019-06-26 01:47:00,556 INFO [main] org.apache.cxf.endpoint.ServerImpl.initDestination(85) | Setting the server's publish address to be http://localhost:8011/ws/
+2019-06-26 01:47:00,626 INFO [main] org.eclipse.jetty.server.Server.doStart(272) | jetty-8.1.15.v20140411
+2019-06-26 01:47:01,063 INFO [main] org.eclipse.jetty.server.AbstractConnector.doStart(338) | Started SelectChannelConnector@localhost:8011
+2019-06-26 01:48:21,864 INFO [qtp22069592-17] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:8011/ws/userService/user
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/xml
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Length=[111], content-type=[application/xml], Host=[localhost:8011], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.1]}
+Payload: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><User><id>1000</id><username>å¼ ææ</username></User>
+--------------------------------------
+2019-06-26 01:48:22,715 INFO [qtp22069592-17] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Outbound Message
+---------------------------
+ID: 1
+Response-Code: 204
+Content-Type: 
+Headers: {Date=[Tue, 25 Jun 2019 17:48:22 GMT], Content-Length=[0]}
+--------------------------------------
+2019-06-26 01:50:16,074 INFO [qtp22069592-18] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Inbound Message
+----------------------------
+ID: 2
+Address: http://localhost:8011/ws/userService/user
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Length=[43], content-type=[application/json], Host=[localhost:8011], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.1]}
+Payload: {"User":{"id":1000,"username":"å¼ ææ"}}
+--------------------------------------
+2019-06-26 01:50:16,104 INFO [qtp22069592-18] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Outbound Message
+---------------------------
+ID: 2
+Response-Code: 204
+Content-Type: 
+Headers: {Date=[Tue, 25 Jun 2019 17:50:16 GMT], Content-Length=[0]}
+--------------------------------------
+2019-06-26 01:51:42,305 INFO [qtp22069592-20] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Inbound Message
+----------------------------
+ID: 3
+Address: http://localhost:8011/ws/userService/user/1
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/xml], Cache-Control=[no-cache], connection=[keep-alive], content-type=[application/json], Host=[localhost:8011], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.1]}
+--------------------------------------
+2019-06-26 01:51:42,307 WARN [qtp22069592-20] org.apache.cxf.jaxrs.utils.JAXRSUtils.findTargetMethod(522) | No operation matching request path "/ws/userService/user/1" is found, Relative Path: /user/1, HTTP Method: GET, ContentType: application/json, Accept: application/xml,. Please enable FINE/TRACE log level for more details.
+2019-06-26 01:51:42,315 WARN [qtp22069592-20] org.apache.cxf.jaxrs.impl.WebApplicationExceptionMapper.toResponse(73) | javax.ws.rs.ClientErrorException: HTTP 405 Method Not Allowed
+	at org.apache.cxf.jaxrs.utils.SpecExceptions.toHttpException(SpecExceptions.java:117)
+	at org.apache.cxf.jaxrs.utils.ExceptionUtils.toHttpException(ExceptionUtils.java:157)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.findTargetMethod(JAXRSUtils.java:526)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.processRequest(JAXRSInInterceptor.java:177)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.handleMessage(JAXRSInInterceptor.java:77)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:243)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.doService(JettyHTTPDestination.java:261)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPHandler.handle(JettyHTTPHandler.java:70)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1088)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1024)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+
+2019-06-26 01:51:42,316 INFO [qtp22069592-20] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Outbound Message
+---------------------------
+ID: 3
+Response-Code: 405
+Content-Type: 
+Headers: {Allow=[DELETE, POST, GET, PUT, OPTIONS, HEAD], Date=[Tue, 25 Jun 2019 17:51:42 GMT], Content-Length=[0]}
+--------------------------------------
+2019-06-26 01:52:01,360 INFO [qtp22069592-19] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Inbound Message
+----------------------------
+ID: 4
+Address: http://localhost:8011/ws/userService/user/1
+Http-Method: GET
+Content-Type: */*
+Headers: {Accept=[application/xml], Cache-Control=[no-cache], connection=[keep-alive], content-type=[*/*], Host=[localhost:8011], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.1]}
+--------------------------------------
+2019-06-26 01:52:01,360 WARN [qtp22069592-19] org.apache.cxf.jaxrs.utils.JAXRSUtils.findTargetMethod(522) | No operation matching request path "/ws/userService/user/1" is found, Relative Path: /user/1, HTTP Method: GET, ContentType: */*, Accept: application/xml,. Please enable FINE/TRACE log level for more details.
+2019-06-26 01:52:01,361 WARN [qtp22069592-19] org.apache.cxf.jaxrs.impl.WebApplicationExceptionMapper.toResponse(73) | javax.ws.rs.ClientErrorException: HTTP 405 Method Not Allowed
+	at org.apache.cxf.jaxrs.utils.SpecExceptions.toHttpException(SpecExceptions.java:117)
+	at org.apache.cxf.jaxrs.utils.ExceptionUtils.toHttpException(ExceptionUtils.java:157)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.findTargetMethod(JAXRSUtils.java:526)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.processRequest(JAXRSInInterceptor.java:177)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSInInterceptor.handleMessage(JAXRSInInterceptor.java:77)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:243)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPDestination.doService(JettyHTTPDestination.java:261)
+	at org.apache.cxf.transport.http_jetty.JettyHTTPHandler.handle(JettyHTTPHandler.java:70)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1088)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1024)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+
+2019-06-26 01:52:01,362 INFO [qtp22069592-19] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Outbound Message
+---------------------------
+ID: 4
+Response-Code: 405
+Content-Type: 
+Headers: {Allow=[DELETE, POST, GET, PUT, OPTIONS, HEAD], Date=[Tue, 25 Jun 2019 17:52:01 GMT], Content-Length=[0]}
+--------------------------------------
+2019-06-26 01:54:00,094 INFO [main] org.apache.cxf.endpoint.ServerImpl.initDestination(85) | Setting the server's publish address to be http://localhost:8011/ws/
+2019-06-26 01:54:00,217 INFO [main] org.eclipse.jetty.server.Server.doStart(272) | jetty-8.1.15.v20140411
+2019-06-26 01:54:00,979 INFO [main] org.eclipse.jetty.server.AbstractConnector.doStart(338) | Started SelectChannelConnector@localhost:8011
+2019-06-26 01:54:10,034 INFO [qtp236304360-20] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:8011/ws/userService/user/1
+Http-Method: GET
+Content-Type: */*
+Headers: {Accept=[application/xml], Cache-Control=[no-cache], connection=[keep-alive], content-type=[*/*], Host=[localhost:8011], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.1]}
+--------------------------------------
+2019-06-26 01:54:10,174 INFO [qtp236304360-20] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Outbound Message
+---------------------------
+ID: 1
+Response-Code: 200
+Content-Type: application/xml
+Headers: {Content-Type=[application/xml], Date=[Tue, 25 Jun 2019 17:54:10 GMT]}
+Payload: <?xml version="1.0" encoding="UTF-8"?><Users><User><id>2</id><username>张四</username></User><User/></Users>
+--------------------------------------
+2019-06-26 01:56:03,395 INFO [qtp236304360-22] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Inbound Message
+----------------------------
+ID: 2
+Address: http://localhost:8011/ws/userService/user/1
+Http-Method: GET
+Content-Type: */*
+Headers: {Accept=[application/xml], Cache-Control=[no-cache], connection=[keep-alive], content-type=[*/*], Host=[localhost:8011], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.1]}
+--------------------------------------
+2019-06-26 01:56:03,399 INFO [qtp236304360-22] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Outbound Message
+---------------------------
+ID: 2
+Response-Code: 200
+Content-Type: application/xml
+Headers: {Content-Type=[application/xml], Date=[Tue, 25 Jun 2019 17:56:03 GMT]}
+Payload: <?xml version="1.0" encoding="UTF-8"?><Users><User><id>2</id><username>张四</username></User><User/></Users>
+--------------------------------------
+2019-06-26 01:58:07,581 INFO [qtp236304360-23] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Inbound Message
+----------------------------
+ID: 3
+Address: http://localhost:8011/ws/userService/user/1
+Http-Method: GET
+Content-Type: */*
+Headers: {Accept=[application/xml], Cache-Control=[no-cache], connection=[keep-alive], content-type=[*/*], Host=[localhost:8011], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.1]}
+--------------------------------------
+2019-06-26 01:58:07,583 INFO [qtp236304360-23] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Outbound Message
+---------------------------
+ID: 3
+Response-Code: 200
+Content-Type: application/xml
+Headers: {Content-Type=[application/xml], Date=[Tue, 25 Jun 2019 17:58:07 GMT]}
+Payload: <?xml version="1.0" encoding="UTF-8"?><Users><User><id>2</id><username>张四</username></User><User/></Users>
+--------------------------------------
+2019-06-26 01:58:52,497 INFO [qtp236304360-18] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Inbound Message
+----------------------------
+ID: 4
+Address: http://localhost:8011/ws/userService/user/1
+Http-Method: GET
+Content-Type: */*
+Headers: {Accept=[application/xml], Cache-Control=[no-cache], connection=[keep-alive], content-type=[*/*], Host=[localhost:8011], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.1]}
+--------------------------------------
+2019-06-26 01:58:52,499 INFO [qtp236304360-18] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Outbound Message
+---------------------------
+ID: 4
+Response-Code: 200
+Content-Type: application/xml
+Headers: {Content-Type=[application/xml], Date=[Tue, 25 Jun 2019 17:58:52 GMT]}
+Payload: <?xml version="1.0" encoding="UTF-8"?><Users><User><id>2</id><username>张四</username></User><User/></Users>
+--------------------------------------
+2019-06-26 01:59:05,954 INFO [qtp236304360-20] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Inbound Message
+----------------------------
+ID: 5
+Address: http://localhost:8011/ws/userService/user/1
+Http-Method: GET
+Content-Type: */*
+Headers: {Accept=[application/xml], Cache-Control=[no-cache], connection=[keep-alive], content-type=[*/*], Host=[localhost:8011], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.1]}
+--------------------------------------
+2019-06-26 01:59:05,956 INFO [qtp236304360-20] org.apache.cxf.interceptor.AbstractLoggingInterceptor.log(250) | Outbound Message
+---------------------------
+ID: 5
+Response-Code: 200
+Content-Type: application/xml
+Headers: {Content-Type=[application/xml], Date=[Tue, 25 Jun 2019 17:59:05 GMT]}
+Payload: <?xml version="1.0" encoding="UTF-8"?><Users><User><id>2</id><username>张四</username></User><User/></Users>
+--------------------------------------

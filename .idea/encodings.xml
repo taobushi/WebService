@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/jaxrs_01_server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaxrs_02_consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaxrs_03_spring" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaxrs_03_spring_server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaxrs_04_spring_consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaxws_01_server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaxws_03_spring_server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaxws_04_spring_consumer" charset="UTF-8" />
+  </component>
+</project>
